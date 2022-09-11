@@ -1,3 +1,15 @@
+/** Font imported from google fonts **/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/** Basic Color Template for this web app **/
+/** Green #58D68D */
+/** Blue #3498DB */
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+
 /** Navigation Bar **/
 ul {
     list-style-type: none;
@@ -19,8 +31,12 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: #111;
+li a:hover:not(.active) {
+    background-color: #3498DB;
+}
+
+.active {
+    background-color: #58D68D;
 }
 
 /** Navigation Bar **/

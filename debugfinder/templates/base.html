@@ -7,19 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{% static 'debugfinder/base.css' %}">
-    <title>Foundation Template</title>
+    <title>{% block title %} {#
+        <!--title here--> #} {% endblock %}
+    </title>
+    {% block head %}
+    {% endblock %}
 </head>
 
 <body>
 
     <!-- Navigation bar -->
     <ul>
-        <li><a class="active" href="">Home</a></li>
-        <li><a href="">Login</a></li>
-        <li><a href="">Control Panel</a></li>
-        <li><a href="">Servers Panel</a></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">Server Status</a></li>
+        <li><a href="#contact">Login</a></li>
+        <li><a href="#about">Quick Check</a></li>
     </ul>
     <!-- Navigation bar -->
+
 
 
     <!-- Footter for debug finder-->
@@ -27,6 +32,11 @@
         <ul>
             <li></li>
         </ul>
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
     </div>
 </body>
 
