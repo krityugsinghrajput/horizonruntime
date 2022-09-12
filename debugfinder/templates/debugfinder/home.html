@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block active_page1 %} active area-current="page" {% endblock %}
-{% block title %} Home DebugFinder {% endblock %}
+{% block title %} Home | DebugFinder {% endblock %}
+{% load static %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'debugfinder/home.css' %}">
 </head>
 
 {% block head %}
@@ -16,10 +18,25 @@
 {% block content %}
 
 <body>
-    <h1>Yay, its working!</h1>
-    <p>Example</p>
-</body>
+    <div class="welcome_section">
+        <h1>Welcome to DebugFinder!</h1>
+    </div>
 
+    <!---
+    <div class="quick_how_to">
+        <h2>Steps to your success ...</h2>
+        <ul>
+            <li>Sign up at debugfinder.com</li>
+            <li>Create a new helper</li>
+            <li>Paste in your code</li>
+            <li>Let DebugFinder do all the hard work</li>
+            <li>Get and see the suggestions and errors in your code</li>
+            <li>Enjoy :)</li>
+        </ul>
+    </div>
+-->
+
+</body>
 {% endblock %}
 
 
