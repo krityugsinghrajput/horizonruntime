@@ -15,3 +15,10 @@ def login(request):
     'Hey there, login successful {user}'
     }
     return render('debugfinder/login.html', context)
+
+
+def search_results(request):
+    search_text = request.GET.get("search", "")
+
+    return render(request, 'debugfinder/search_results.html', ({"search_text": search_text}))
+    

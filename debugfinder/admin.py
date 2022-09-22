@@ -2,4 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-admin.site.site_header = 'DebugFinder Developer Portal'
+class DebugFinderAdmin(admin.AdminSite):
+    index_title = "DebugFinder Portal"
+    title_header = "DebugFinder Admin Portal"
+    Site_header = "DebugFinder Portal"
