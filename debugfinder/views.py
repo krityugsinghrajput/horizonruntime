@@ -17,8 +17,18 @@ def login(request):
     return render('debugfinder/login.html', context)
 
 
-def search_results(request):
-    search_text = request.GET.get("search", "")
+def search(request):
+    if request.method == 'POST':
+        searched = request.get.POST['searched']
+        return render(request, 'debugfinder/search.html', searched)
+    else:
+        return render(request, 'debugfinder/search.html')
 
-    return render(request, 'debugfinder/search_results.html', ({"search_text": search_text}))
-    
+
+def search_results(request):
+    return render(request, 'debugfinder/search_results.html')
+
+
+
+def docs_index(request):
+    return render(request, 'debugfinder/docs_index.html')
