@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import chapters, bookstore
 
 # Create your views here.
 
@@ -25,10 +26,19 @@ def search(request):
         return render(request, 'debugfinder/search.html')
 
 
+
 def search_results(request):
     return render(request, 'debugfinder/search_results.html')
 
 
-
 def docs_index(request):
-    return render(request, 'debugfinder/docs_index.html')
+    return render(request, 'debugfinder/docs_index.html',{"chapters": chapters.objects.all()})
+
+
+def bookstore_page(request):
+    return render(request, 'debugfinder/bookstore.html', {"bookstore": bookstore.objects.all()})
+
+
+def bookstore_sep(request, bookstore_id):
+    bookstore_sep = bookstore.objects.get(pk=bookstore_id)
+    return render(request, 'debugfinder/chapter.html', {'bookstore_sep': bookstore_sep})
