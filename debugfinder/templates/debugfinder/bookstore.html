@@ -1,0 +1,59 @@
+{% extends 'debugfinder/layout_bookstore.html' %}
+
+{% block header %}
+<title>Bookstore-Home</title>
+{% endblock %}
+
+
+{% block bookstore_body %}
+<div class="header">
+    <h2>View current most popular books about debugfinder framework</h2>
+</div>
+
+{% for bookname in bookstore %}
+
+
+<div class="">
+    <ul>
+    <li>The book <strong>{{bookname.bookname}}</strong> was written in the year <strong> {{bookname.yearwritten}}  </strong>by 
+        <strong>{{bookname.author}}</strong> and was published in the year <strong> {{bookname.published}}</strong> with the description of <strong> {{bookname.information}}</strong>
+    </li>
+</ul>
+</div>
+
+
+
+
+{% endfor %}
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Bookname</th>
+      <th scope="col">Author</th>
+      <th scope="col">Published</th>
+      <th scope="col">Year Written</th>
+      <th scope="col">Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{bookname.bookname}}</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

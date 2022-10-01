@@ -8,4 +8,6 @@ urlpatterns = [
     path('server_status', views.server_status, name='ss'),
     path('search', views.search, name='search'),
     path('docs', views.docs_index, name='docs_index'),
+    path('bookstore_home', views.bookstore_page, name='bookstore_home'),
+    path('<int:bookstore_id>', views.bookstore_sep, name='chapters')
 ] 

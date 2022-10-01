@@ -6,10 +6,33 @@
 {% endblock %}
 
 
-    {% block docs %}
+    {% block docs_chapters %}
 
     <div class="container">
-        <h1></h1>
+        <h1>Index Page</h1>
+        <p>Here you can find all the locations for all the documenetation chapters.</p>
+        <p>Simply click on on of the link from the list to access the chapter.</p>
     </div>
+
+
+    {% for chapter in chapters %}
+
+
+    <ul class="list-group">
+        <li class="list-group-item">The chapter  #{{ chapter.chapter }} 
+            was created on {{ chapter.datecreated }} by {{ chapter.createdby}}</li>
+      </ul>
+ 
+      <!--
+    <div class="">
+        <ul>
+            <li><a href="#example"></a></li>
+        </ul>
+    </div>
+-->
+
+
+    {% endfor %}
+
 
     {% endblock %}
